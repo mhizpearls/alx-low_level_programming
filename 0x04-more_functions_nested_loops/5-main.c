@@ -10,4 +10,3 @@ int main(void)
     more_numbers();
     return (0);
 }
-julien@ubuntu:~/0x04$
