@@ -1,57 +1,44 @@
 #include "main.h"
-
 /**
- *evaluate_num - recursion loop
- *@num: num
- *@iterator: number to iterate
- *Return: return 1 or 0
+ *_evaluate - evaluate function sqrt
+ *@i: interger
+ *@n: interger
+ *Return: evaluate sqrt
  */
 
-int evaluate_num(int num, int iterator)
+int _evaluate(int i, int n)
 {
+/*Evaluate function*/
+if (n == 0 || n == 1)
+return (n);
 
-if (iterator == num - 1)
-{
-return (1);
-}
+else if (i * i < n)
+return (_evaluate(i + 1, n));
 
-else if (num % iterator == 0)
-{
-return (0);
-}
+else if (i * i == n) /*Condiction base*/
+return (i);
 
-if (num % iterator != 0)
-{
-return (evaluate_num(num, iterator + 1));
-}
+return (-1);
 
-return (0);
-
+return (-1);
 }
 
 /**
- *is_prime_number - evaluate prime or not
- *@num: number
- *Return: return 1 prime - return 0 otherwise
+ *_sqrt_recursion - evaluate sqrt
+ *@n: interger
+ *Return: Sgrt_recursion
  */
 
-int is_prime_number(int num)
+int _sqrt_recursion(int n)
 {
+int i = 0;
 
-int iterator;
+if (i < 0) /*If n is negative*/
+return (-1);
 
-iterator = 2;
-
-/* only greater than 2*/
-if (num < 2)
+else
 {
-return (0);
+return (_evaluate(i, n)); /*Recursive call*/
 }
 
-if (num == 2)
-{
-return (1);
-}
-
-return (evaluate_num(num, iterator));
 }
